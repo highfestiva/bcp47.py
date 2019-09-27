@@ -1,2 +1,5 @@
 .buffer.pdf
 __pycache__/
+bcp47.egg-info/
+build/
+dist/
