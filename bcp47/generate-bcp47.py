@@ -2,6 +2,7 @@
 # coding=utf-8
 
 from PyPDF2 import PdfFileReader
+import os
 import requests
 
 
@@ -57,7 +58,8 @@ def write_output(name_tag):
 
 
 # download and write local file
-if True:
+if not os.path.exists('.buffer.pdf'):
+    print('Downloading the original masterpiece from Ms.Gates.')
     r = requests.get(url, stream=True)
     with open('.buffer.pdf', 'wb') as w:
         for chunk in r.iter_content(1024):
