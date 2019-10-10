@@ -2,6 +2,8 @@
 Language tags are not your everyday ISO standard, but instead composed of an ISO-639 language code, and an ISO-3166 country/region code
 (and occationally an ISO-15924 script tag for the written language).
 
+The file is generated from Microsoft's seminal piece, [MS-LCID].pdf.
+
 ## Easy installation
 
 ```bash
