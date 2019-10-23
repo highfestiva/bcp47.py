@@ -55,6 +55,8 @@ def write_output(name_tag):
             namecache.add(name)
             print('    "%s": "%s",' % (name, tag), file=w)
         print('}', file=w)
+        print(file=w)
+        print('tags = {v:k for k,v in languages.items()}', file=w)
 
 
 # download and write local file

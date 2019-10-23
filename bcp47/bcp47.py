@@ -822,3 +822,5 @@ languages = {
     "Zulu": "zu",
     "Zulu - South Africa": "zu-ZA",
 }
+
+tags = {v:k for k,v in languages.items()}
