@@ -41,6 +41,21 @@ def generate_page(phrases):
     return name_tag
 
 
+def join_phrases(phrases):
+    '''PyDFP2 generator output separates cells with a single space line, but none for word split.
+       This joins phrases only separated by a single linefeed.'''
+    complete_phrases = []
+    last_ps = ''
+    for phrase in phrases:
+        ps = phrase.strip()
+        if ps and last_ps:
+            complete_phrases[len(complete_phrases)-1] += ps
+        elif ps:
+            complete_phrases.append(phrase)
+        last_ps = ps
+    return complete_phrases
+
+
 def write_output(name_tag):
     with open('bcp47.py', 'wt', encoding='utf-8') as w:
         print('# generated file', file=w)
@@ -75,6 +90,7 @@ with open('.buffer.pdf', 'rb') as r:
         phrases = page.extractText().splitlines()
         if 'Language' not in phrases:
             continue
+        phrases = join_phrases(phrases)
         name_tag += generate_page(phrases)
 write_output(name_tag)
 print('file generation complete')
