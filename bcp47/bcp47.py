@@ -133,7 +133,7 @@ languages = {
     "Cornish - United Kingdom": "kw-GB",
     "Corsican": "co",
     "Corsican - France": "co-FR",
-    "Croatian": "hr,",
+    "Croatian": "hr",
     "Croatian - Croatia": "hr-HR",
     "Croatian (Latin) - Bosnia and Herzegovina": "hr-BA",
     "Czech": "cs",
